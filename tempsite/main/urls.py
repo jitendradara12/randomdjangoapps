@@ -19,5 +19,5 @@ Including another URLconf
 from django.urls import path
 
 urlpatterns = [
-    path("<int:id>", views.index, name='main/id')
+    path("<int:id>", views.index, name='main_id')
 ]
