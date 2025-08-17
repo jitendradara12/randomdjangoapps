@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+  see your database
+{% endblock %}
+
+{% block content %}
+  <p>{{ls.name}}</p>
+  <p>s;uck</p>
+  <br>
+
+  <table border = '1' style="border-radius:2px; background-color: aquamarine">
+    <tr>
+      <th>item</th>
+      <th>completed</th>
+    </tr>
+    {% for item in ls.item_set.all %}
+      <tr>
+        <th>{{item.text}}</th>
+        <th style="{%if item.complete %}background-color:aqua{% else %}background-color:red{% endif %}">{{item.complete}}</th>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -20,5 +20,6 @@ from django.urls import path
 
 urlpatterns = [
     path("<int:id>", views.index, name='main_id'),
-    path("", views.home, name='home')
+    path("home", views.home, name='home'),
+    path("list", views.list, name="todolist")
 ]

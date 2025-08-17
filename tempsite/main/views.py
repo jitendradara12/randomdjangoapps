@@ -1,13 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from . import models
 # Create your views here.
 
 
 def index(responce, id):
-    ls = models.ToDolist.objects.get(id=id)
-    return render(responce, 'main/base.html', {})
+    return render(responce, 'main/base.html',{})
 
 
 def home(responce):
     return render(responce, "main/home.html", {})
+
+
+def list(responce):
+    ls = models.ToDolist.objects.get(id=1)
+    return render(responce, "main/list.html", {"ls":ls})
