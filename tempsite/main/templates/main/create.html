@@ -1,0 +1,10 @@
+{% extends "main/base.html" %}
+{% block title %}create{% endblock %}
+{% block content %}
+  add ToDoLists here...
+  <form method="post" action="/main/create">
+    {% csrf_token %}
+    {{form.as_ul}}
+    <button type="submit" name="save">sumbit the list</button>
+  </form>
+{% endblock %}

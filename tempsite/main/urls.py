@@ -19,7 +19,15 @@ Including another URLconf
 from django.urls import path
 
 urlpatterns = [
-    path("<int:id>", views.index, name='main_id'),
+    # essentials...
     path("home", views.home, name='home'),
-    path("list", views.list, name="todolist")
+    path("", views.home, name='home'),
+
+    # extra pages here..
+    path("create", views.create, name="create"),
+    path("list", views.list, name="todolist"),
+
+    path("<int:id>", views.list, name="todolistid"),
+    # must be in the end (default)
+    path("<str:id>", views.index, name='base404')
 ]
