@@ -9,16 +9,34 @@
   <p>s;uck</p>
   <br>
 
-  <table border = '1' style="border-radius:2px; background-color: aquamarine">
-    <tr>
-      <th>item</th>
-      <th>completed</th>
-    </tr>
-    {% for item in ls.item_set.all %}
+  <form method = 'post' action = '#'>
+    {% csrf_token %}
+    <table border = '1' style="border-radius:2px; background-color: aquamarine">
       <tr>
-        <th>{{item.text}}</th>
-        <th style="{%if item.complete %}background-color:aqua{% else %}background-color:red{% endif %}">{{item.complete}}</th>
+        <th>item</th>
+        <th>completed</th>
       </tr>
-    {% endfor %}
-  </table>
+      {% for item in ls.item_set.all %}
+        <tr>
+          <th>{{item.text}}</th>
+          <th style="{%if item.complete %}background-color:aqua{% else %}background-color:red{% endif %}">
+            {% if item.complete %}
+            <input type="checkbox" name="c{{item.id}}" value="clicked" checked></input>
+            {% else%}
+            <input type="checkbox" name="c{{item.id}}" value="clicked"></input>
+            {% endif %}
+          </th>
+        </tr>
+      {% endfor %}
+      <tr>
+        <td>
+          <button type="submit", name = "save" value = "save">saveit</button>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <input type="text" name="new" value="new">
+    <button type="submit", name = "NewItem" value = "NewItem">Add One More</button>
+  </form>
 {% endblock %}

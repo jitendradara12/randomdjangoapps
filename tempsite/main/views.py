@@ -14,6 +14,18 @@ def home(responce):
 
 def list(responce, id):
     ls = models.ToDolist.objects.get(id=id)
+    if responce.method == 'POST':
+        print(responce.POST)
+        if responce.POST.get("save"):
+            for item in ls.item_set.all():
+                if responce.POST.get('c'+str(item.id)) == 'clicked':
+                    item.complete = True
+                else:
+                    item.complete = False
+                item.save()
+        elif responce.POST.get("NewItem"):
+            pass
+
     return render(responce, "main/list.html", {"ls": ls})
 
 
