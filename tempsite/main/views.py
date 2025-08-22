@@ -24,7 +24,12 @@ def list(responce, id):
                     item.complete = False
                 item.save()
         elif responce.POST.get("NewItem"):
-            pass
+            text = responce.POST.get("new")
+
+            if len(text) > 2:
+                ls.item_set.create(text=text, complete=False)
+            else:
+                print("invalid input (smol)")
 
     return render(responce, "main/list.html", {"ls": ls})
 
