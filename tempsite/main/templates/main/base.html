@@ -33,13 +33,22 @@
     }
 
     .header{
-      padding:4px;
     }
 
     .content{
       margin:0px;
       padding: 2%;
       background-color:white;
+    }
+    .nav{
+      font-family:verdana;
+      font-size:large;
+      background-color:lightblue;
+      border-radius:22px;
+      margin-left:2%;
+      margin-right:2%;
+      padding:2%;
+      text-align:center;
     }
 
     hr{
@@ -49,13 +58,11 @@
       background-color:lightblue;
     }
   </style>
-  <body style = "margin:0px">
+  <body style="margin-top:0%;>
     <div class = "header">
-      <table>
-        <tr>
-          <th style="padding:22px; border-radius: 12px; margin: 5%">THIS IS THE HEADER OF MY SITE</th>
-        </tr>
-      </table>
+      <div class = "nav">
+          <h1 style="margin:0px">THIS IS THE HEADER OF MY SITE</h1>
+      </div>
     </div>
     <div id='content' name = 'content'>
       {% block content %}
