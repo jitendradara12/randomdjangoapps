@@ -15,21 +15,48 @@
     th,td{
       text-align:center;
       border-radius:14;
+      padding:5px;
+    }
+
+    button{
+      text-position:center; border-radius:25px; padding:8px; background-color:skyblue; border:0px
+    }
+
+    button:hover{
+      background-color:lightgreen;
+    }
+
+    button:clicked{
+      background-color:green;
+      border-radius:8px;
+      transition: ease-in-out 0.3s ;
+    }
+
+    .header{
       padding:4px;
     }
 
-    button{text-position:center; border-radius:25px; padding:2px; background-color:skyblue}
-    .header{margin:0px;}
+    .content{
+      margin:0px;
+      padding: 2%;
+      background-color:white;
+    }
+
+    hr{
+      margin:0px;
+      border:0px;
+      height:1px;
+      background-color:lightblue;
+    }
   </style>
-  <body>
+  <body style = "margin:0px">
     <div class = "header">
       <table>
         <tr>
-          <th>THIS IS THE HEADER OF MY SITE</th>
+          <th style="padding:22px; border-radius: 12px; margin: 5%">THIS IS THE HEADER OF MY SITE</th>
         </tr>
       </table>
     </div>
-    <hr>
     <div id='content' name = 'content'>
       {% block content %}
         404 page not found 
