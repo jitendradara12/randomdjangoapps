@@ -19,36 +19,39 @@
     }
 
     button{
-      text-position:center; border-radius:25px; padding:8px; background-color:skyblue; border:0px
+      text-position:center; border-radius:25px; padding:8px; background-color:skyblue; border:0px; cursor:pointer;
     }
 
     button:hover{
-      background-color:lightgreen;
+      background-color:purple;
+      transform: translateY(-2px);
     }
 
-    button:clicked{
+    button:active{
       background-color:green;
       border-radius:8px;
       transition: ease-in-out 0.3s ;
     }
 
     .header{
-      background-color:blue;
     }
 
     .content{
-      margin:0px;
-      padding: 2%;
+      margin:3%;
       background-color:white;
     }
+
     .nav{
       font-family:arial;
       font-size:large;
       background-color:lightblue;
       border-radius:100px;
-      margin:2%;
-      padding:2%;
-      text-align:center;
+      padding:3%;
+      margin: 2%;
+      margin-bottom:0px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
     hr{
@@ -61,10 +64,11 @@
   <body style="margin:0%;>
     <div class = "header">
       <div class = "nav">
-          <h1 style="margin:0px">THIS IS THE HEADER OF MY SITE</h1>
+          <h1 style="margin:0px; margin-right: 50%">THIS IS THE HEADER OF MY SITE</h1>
+          <button onclick="location.href='/main/'" style = "scale:200%;padding:1%;border-radius:37%; margin-right:6%;"; ">Home</button>
       </div>
     </div>
-    <div id='content' name = 'content'>
+    <div class='content' name = 'content'>
       {% block content %}
         404 page not found 
       {% endblock %}
